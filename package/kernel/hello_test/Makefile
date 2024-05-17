@@ -10,6 +10,7 @@ include $(INCLUDE_DIR)/kernel.mk
 
 PKG_NAME:=hello_test
 PKG_VERSION:=1.01
+PKG_RELEASE:=1
 # PKG_LICENSE:=GPL-2.0
 
 include $(INCLUDE_DIR)/package.mk
