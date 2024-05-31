@@ -1,0 +1,26 @@
+{
+    "search.useIgnoreFiles": true,
+    "search.exclude": {
+        "**/node_modules/**": true,
+        "**/build/**": true,
+        "**/deps/**": true,
+        "**/doxygen/**": true
+    },
+    "files.watcherExclude": {
+        "**/node_modules/**": true,
+        "**/build/**": true,
+        "**/deps/**": true,
+        "**/doxygen/**": true
+    },
+    "files.exclude": {  /* 在 VSCode 中不显示*/
+        "tools/": true,
+        "scripts/": true,
+        "tmp/": true,
+        "dl/": true
+    },
+    "C_Cpp.intelliSenseEngine": "Disabled",     /* 禁用C/CPP tools */
+    "explorer.excludeGitIgnore": false, 
+    "git.detectSubmodules": false,
+    "git.ignoreSubmodules": false,
+    "git.autoRepositoryDetection": "openEditors"
+}
