@@ -1,0 +1,43 @@
+#!/bin/sh /etc/rc.common
+
+START=92 # 执行的顺序，按照字符串顺序排序并不是数字排序
+STOP=92
+SERVICE=app
+PROG=/app/mycode
+USE_PROCD=1 # 使用procd启动
+
+# start_service 函数必须要重新定义
+start_service()
+{
+    echo service mycode start
+    procd_open_instance  # 创建一个实例， 在 procd 看来一个应用程序可以多个实例
+    # ubus call service list 可以查看实例
+    procd_set_param command $PROG # mycode执行的命令是"/app/mycode" 
+    procd_set_param respawn # 定义respawn参数，告知procd当mycode程序退出后尝试进行重启
+    procd_close_instance # 关闭实例
+}
+
+# service_triggers 重新定义，没有操作那么可以删掉，但是不能为空
+service_triggers()
+{
+    procd_add_reload_trigger mycode
+}
+
+#reload_service重新定义，没有操作那么可以删掉，但是不能为空
+reload_service()
+{
+    echo service mycode reload
+}
+
+# stop_service重新定义，退出服务后需要做的操作，没有操作那么可以删掉，但是不能为空
+stop_service()
+{
+    echo service mycode stop
+}
+
+#restart重新定义，没有操作那么可以删掉，但是不能为空
+restart() 
+{
+    stop
+    start
+}
