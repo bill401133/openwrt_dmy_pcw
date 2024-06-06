@@ -1,0 +1,14 @@
+--- a/patch-test.c
++++ b/patch-test.c
+@@ -7,8 +7,10 @@ int main(void)
+     for(i = 0; i < 10; i++)
+     {
+         printf("[ %02d ] This is for patch learn testing\n", i + 1);
+-        sleep(10);
++        sleep(1);
+     }
++    printf("\t here comes patching~~\n");
++    printf("\n\t\tEdit an existing patch\n");
+ 
+     return 0;
+ }
