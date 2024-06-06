@@ -14,7 +14,7 @@ int main(void)
     for (i = 0; i < 100; i++)
     {
         fprintf(fp,"[ %02d ] This is an self-start program Test %d\n", i, i);
-        sleep(1);
+        sleep(20);
     }
 
     // 关闭文件
