@@ -1,0 +1,18 @@
+--- a/hello_test.c
++++ b/hello_test.c
+@@ -5,6 +5,7 @@
+ static int __init hello_init(void)
+ {
+     printk("hello world by dmy's program hello_test\n");
++    printk("\tthis is personal kernel package patching test\n");
+     return 0;
+ }
+ 
+@@ -17,4 +18,5 @@ module_init(hello_init);
+ module_exit(hello_exit);
+ 
+ MODULE_LICENSE("GPL");
+-MODULE_DESCRIPTION("hello Debug Module");
+\ No newline at end of file
++MODULE_DESCRIPTION("hello Debug Module");
++

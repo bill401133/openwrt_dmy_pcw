@@ -1,0 +1,10 @@
+--- a/lib/test_printf.c
++++ b/lib/test_printf.c
+@@ -167,6 +167,7 @@ test_number(void)
+ 	test("0|1|1|128|255", "%hhu|%hhu|%hhu|%hhu|%hhu", 0, 1, 257, 128, -1);
+ 	test("0|1|1|-128|-1", "%hhd|%hhd|%hhd|%hhd|%hhd", 0, 1, 257, 128, -1);
+ 	test("2015122420151225", "%ho%ho%#ho", 1037, 5282, -11627);
++	test("2024060720240607", "%ho%ho%#ho", 1142, 2239, 80);
+ 	/*
+ 	 * POSIX/C99: »The result of converting zero with an explicit
+ 	 * precision of zero shall be no characters.« Hence the output
